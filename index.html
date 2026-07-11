@@ -4,46 +4,373 @@
     <title>Joy Beauty Salon</title>
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      .hero .services-intro {
-        max-width: 900px;
-        margin: 2rem auto 0;
-        padding: 0;
-        background: transparent;
-        border-radius: 0;
-        box-shadow: none;
+      body {
+        background: radial-gradient(circle at top, #fff7fb 0%, #fffafc 42%, #ffffff 100%);
+        color: #2d1f27;
       }
 
-      .hero .services-intro > p {
-        margin-top: 0;
-        line-height: 1.7;
-        color: #444;
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        box-shadow: 0 10px 32px rgba(179, 63, 114, 0.14);
+        backdrop-filter: blur(14px);
       }
 
-      .hero .services-list {
-        list-style: none;
-        padding: 0;
-        margin: 1.5rem 0 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1.75rem;
+      nav ul {
+        gap: 0.25rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
 
-      .hero .services-list li {
-        background: transparent;
-        border: 0;
-        border-radius: 0;
-        padding: 0;
+      nav ul li {
+        margin-left: 0;
+      }
+
+      nav ul li a {
+        display: inline-block;
+        padding: 0.55rem 0.85rem;
+        border-radius: 999px;
+        transition: background-color 160ms ease, color 160ms ease;
+      }
+
+      nav ul li a:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
         text-align: left;
+        padding: 5.5rem 2.5rem 3.5rem;
+        background:
+          radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.8), transparent 28%),
+          linear-gradient(135deg, #fff3f8 0%, #ffe3ee 45%, #fff8fb 100%);
       }
 
-      .hero .services-list h3 {
-        margin: 0 0 0.35rem;
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(10px);
+        pointer-events: none;
+      }
+
+      .hero::before {
+        width: 14rem;
+        height: 14rem;
+        right: -5rem;
+        top: 2rem;
+        background: rgba(255, 255, 255, 0.36);
+      }
+
+      .hero::after {
+        width: 18rem;
+        height: 18rem;
+        left: -6rem;
+        bottom: -9rem;
+        background: rgba(255, 105, 180, 0.12);
+      }
+
+      .hero-inner,
+      .services-intro,
+      .landing-cta {
+        position: relative;
+        z-index: 1;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.55rem 0.95rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(179, 63, 114, 0.12);
+        color: #9c3c66;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-size: 0.74rem;
+        font-weight: 700;
+      }
+
+      .hero h1 {
+        max-width: 11ch;
+        margin: 1.1rem 0 1.1rem;
+        font-size: clamp(3rem, 6vw, 5.6rem);
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+        color: #24131d;
+      }
+
+      .hero h1 span {
         color: #b33f72;
       }
 
-      .hero .services-list p {
+      .hero-description {
+        max-width: 42rem;
+        margin-top: 0;
+        font-size: 1.1rem;
+        line-height: 1.85;
+        color: #5c4b57;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.8rem;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: #b33f72;
+        border: 1px solid rgba(179, 63, 114, 0.22);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.72);
+        color: #9c3c66;
+      }
+
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.8rem;
+      }
+
+      .hero-badges span {
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(179, 63, 114, 0.12);
+        color: #5a4250;
+        box-shadow: 0 14px 28px rgba(179, 63, 114, 0.08);
+      }
+
+      .hero-card {
+        padding: 1.45rem;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(179, 63, 114, 0.12);
+        box-shadow: 0 26px 60px rgba(91, 40, 62, 0.14);
+        backdrop-filter: blur(12px);
+      }
+
+      .card-label,
+      .section-kicker {
         margin: 0;
-        color: #555;
+        color: #b33f72;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .hero-card h2,
+      .services-intro h2 {
+        margin: 0.6rem 0 0;
+        color: #24131d;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-card h2 {
+        font-size: clamp(1.9rem, 2.6vw, 2.7rem);
+      }
+
+      .spotlight-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.3rem 0 0;
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .spotlight-list li,
+      .hero-note {
+        border-radius: 22px;
+        background: #fff;
+        border: 1px solid rgba(179, 63, 114, 0.1);
+      }
+
+      .spotlight-list li {
+        padding: 1rem 1.05rem;
+      }
+
+      .spotlight-list strong {
+        display: block;
+        margin-bottom: 0.35rem;
+        color: #2d1f27;
+        font-size: 1.02rem;
+      }
+
+      .spotlight-list p,
+      .hero-note p,
+      .services-intro > p,
+      .services-list p {
+        margin: 0;
+        color: #62525c;
+        line-height: 1.7;
+      }
+
+      .hero-note {
+        margin-top: 1rem;
+        padding: 1rem 1.1rem;
+        background: linear-gradient(135deg, rgba(255, 105, 180, 0.12), rgba(255, 255, 255, 0.95));
+      }
+
+      .hero-note strong {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: #8a345a;
+      }
+
+      .services-intro {
+        padding: 4.5rem 2.5rem 1.5rem;
+      }
+
+      .services-intro h2 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        max-width: 13ch;
+      }
+
+      .services-intro > p {
+        max-width: 46rem;
+        margin-top: 1rem;
+        font-size: 1.06rem;
+      }
+
+      .services-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .services-list li {
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(179, 63, 114, 0.1);
+        border-radius: 24px;
+        padding: 1.35rem;
+        text-align: left;
+        box-shadow: 0 18px 38px rgba(91, 40, 62, 0.08);
+      }
+
+      .services-list li::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #b33f72, #ff9ec2);
+      }
+
+      .services-list h3 {
+        margin: 0.5rem 0 0.45rem;
+        color: #2d1f27;
+        font-size: 1.15rem;
+      }
+
+      .landing-cta {
+        padding: 0 2.5rem 3rem;
+      }
+
+      .cta-panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 2rem;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #b33f72, #ff69b4);
+        color: #fff;
+        box-shadow: 0 26px 56px rgba(179, 63, 114, 0.24);
+      }
+
+      .cta-panel h2 {
+        margin: 0;
+        font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+        line-height: 1.05;
+      }
+
+      .cta-panel p {
+        margin-top: 0.7rem;
+        max-width: 44rem;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .cta-panel .btn {
+        margin-top: 0;
+        background: #fff;
+        color: #b33f72;
+        white-space: nowrap;
+      }
+
+      .cta-panel .btn:hover {
+        background: #fff2f7;
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner,
+        .cta-panel {
+          grid-template-columns: 1fr;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero {
+          padding: 4.25rem 1.25rem 2.75rem;
+        }
+
+        .services-intro,
+        .landing-cta {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        header {
+          padding: 14px 18px;
+          gap: 0.85rem;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .logo {
+          font-size: 24px;
+        }
+
+        nav ul {
+          gap: 0.35rem;
+        }
+
+        .hero h1 {
+          max-width: 100%;
+        }
+
+        .hero-actions,
+        .cta-panel {
+          gap: 0.85rem;
+        }
       }
     </style>
   </head>
@@ -64,31 +391,94 @@
     </header>
 
     <section class="hero">
-      <h1>Welcome to Joy Beauty Salon</h1>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Luxury beauty studio in one calm, polished space</p>
 
-      <p>Your beauty is our passion.</p>
+          <h1>Beauty that feels <span>refined</span>, personal, and easy to love.</h1>
 
-      <a href="services.html" class="btn">Our Services</a>
-      
-      <div class="services-intro">
-      <p>Discover our range of beauty services designed to make you feel confident and beautiful.</p>
+          <p class="hero-description">
+            From precision hair styling to luminous makeup and restorative spa rituals, Joy Beauty Salon turns
+            everyday appointments into a calm experience with results that hold up beautifully.
+          </p>
+
+          <div class="hero-actions">
+            <a href="services.html" class="btn">Explore Services</a>
+            <a href="contact.html" class="btn btn-secondary">Book a Visit</a>
+          </div>
+
+          <div class="hero-badges">
+            <span>Bridal and event-ready styling</span>
+            <span>Personalized consultations</span>
+            <span>Relaxing spa moments</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <p class="card-label">Most requested services</p>
+          <h2>Looks and rituals guests return for.</h2>
+
+          <ul class="spotlight-list">
+            <li>
+              <strong>Hair Styling</strong>
+              <p>Tailored cuts, soft blowouts, and special-event styling that fits the moment.</p>
+            </li>
+            <li>
+              <strong>Makeup Application</strong>
+              <p>Polished makeup for celebrations, photos, and everyday confidence.</p>
+            </li>
+            <li>
+              <strong>Spa Treatments</strong>
+              <p>Restorative care that helps you unwind while your look is refreshed.</p>
+            </li>
+          </ul>
+
+          <div class="hero-note">
+            <strong>Why it feels different</strong>
+            <p>Thoughtful prep, detail-obsessed finishing, and a calmer appointment from start to mirror check.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="services-intro">
+      <p class="section-kicker">A better kind of salon</p>
+
+      <h2>Designed around the moments that matter most.</h2>
+
+      <p>
+        Whether you are preparing for a wedding, refreshing your everyday look, or taking time to unwind, our
+        services are built to make the experience feel personal and memorable.
+      </p>
 
       <ul class="services-list">
         <li>
           <h3>Hair Styling</h3>
-          <p>Transform your look with our expert hair styling services.</p>
+          <p>Transform your look with expert styling that feels intentional, polished, and wearable.</p>
         </li>
         <li>
           <h3>Makeup Application</h3>
-          <p>Enhance your natural beauty with our professional makeup application.</p>
+          <p>Enhance your natural beauty with long-lasting makeup tailored to the event and your style.</p>
         </li>
         <li>
           <h3>Spa Treatments</h3>
-          <p>Relax and rejuvenate with our luxurious spa treatments.</p>
+          <p>Relax and rejuvenate with luxurious treatments that slow the pace and refresh your glow.</p>
         </li>
       </ul>
-      </div>
+      </section>
 
+    <section class="landing-cta">
+      <div class="cta-panel">
+        <div>
+          <h2>Ready for a beauty appointment that feels considered from the first hello?</h2>
+          <p>
+            Browse the full service menu or reach out to plan a look that fits your occasion, timeline, and comfort
+            level.
+          </p>
+        </div>
+
+        <a href="contact.html" class="btn">Contact Us</a>
+      </div>
     </section>
 
     <footer>
