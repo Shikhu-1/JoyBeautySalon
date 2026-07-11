@@ -1,43 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<title>Joy Beauty Salon</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
+  <head>
+    <title>Joy Beauty Salon</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .hero .services-intro {
+        max-width: 900px;
+        margin: 2rem auto 0;
+        padding: 0;
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+      }
 
-<body>
+      .hero .services-intro > p {
+        margin-top: 0;
+        line-height: 1.7;
+        color: #444;
+      }
 
-<header>
+      .hero .services-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.75rem;
+      }
 
-<div class="logo">Joy Beauty Salon</div>
+      .hero .services-list li {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        text-align: left;
+      }
 
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
+      .hero .services-list h3 {
+        margin: 0 0 0.35rem;
+        color: #b33f72;
+      }
 
-</header>
+      .hero .services-list p {
+        margin: 0;
+        color: #555;
+      }
+    </style>
+  </head>
 
-<section class="hero">
+  <body>
+    <header>
+      <div class="logo">Joy Beauty Salon</div>
 
-<h1>Welcome to Joy Beauty Salon</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<p>Your beauty is our passion.</p>
+    <section class="hero">
+      <h1>Welcome to Joy Beauty Salon</h1>
 
-<a href="services.html" class="btn">Our Services</a>
+      <p>Your beauty is our passion.</p>
 
-</section>
+      <a href="services.html" class="btn">Our Services</a>
+      
+      <div class="services-intro">
+      <p>Discover our range of beauty services designed to make you feel confident and beautiful.</p>
 
-<footer>
+      <ul class="services-list">
+        <li>
+          <h3>Hair Styling</h3>
+          <p>Transform your look with our expert hair styling services.</p>
+        </li>
+        <li>
+          <h3>Makeup Application</h3>
+          <p>Enhance your natural beauty with our professional makeup application.</p>
+        </li>
+        <li>
+          <h3>Spa Treatments</h3>
+          <p>Relax and rejuvenate with our luxurious spa treatments.</p>
+        </li>
+      </ul>
+      </div>
 
-<p>© 2026 Joy Beauty Salon</p>
+    </section>
 
-</footer>
-
-</body>
+    <footer>
+      <p>© 2026 Joy Beauty Salon</p>
+    </footer>
+  </body>
 </html>
