@@ -1,8 +1,276 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>About</title>
-<link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Joy Beauty Salon</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#fdf7f8;
+    color:#333;
+    line-height:1.6;
+}
+
+/* Header */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#d63384;
+    color:white;
+    padding:18px 8%;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#ffd6e8;
+}
+
+/* Hero */
+
+.hero-about{
+    height:70vh;
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    width:80%;
+    max-width:800px;
+}
+
+.hero-content h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:#d63384;
+    color:white;
+    padding:15px 35px;
+    border-radius:30px;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.btn:hover{
+    background:#b81f6b;
+}
+
+/* Sections */
+
+section{
+    padding:70px 8%;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#d63384;
+    font-size:34px;
+}
+
+.about-section p,
+.story p,
+.team p,
+.cta p{
+    text-align:center;
+    font-size:18px;
+}
+
+/* Mission */
+
+.mission-vision .container{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.box{
+    flex:1;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-8px);
+}
+
+/* Features */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.feature{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-8px);
+}
+
+.feature h3{
+    color:#d63384;
+    margin-bottom:15px;
+}
+
+/* Statistics */
+
+.stats{
+    background:#d63384;
+    color:white;
+}
+
+.stats h2{
+    color:white;
+}
+
+.stats-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+/* Team */
+
+.team{
+    background:white;
+}
+
+/* CTA */
+
+.cta{
+    background:linear-gradient(135deg,#d63384,#ff7bac);
+    color:white;
+    text-align:center;
+}
+
+.cta h2{
+    color:white;
+}
+
+.cta .btn{
+    margin-top:25px;
+    background:white;
+    color:#d63384;
+}
+
+.cta .btn:hover{
+    background:#ffe8f2;
+}
+
+/* Footer */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer p{
+    margin:8px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero-content h1{
+    font-size:38px;
+}
+
+.hero-content p{
+    font-size:17px;
+}
+
+.mission-vision .container{
+    flex-direction:column;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
@@ -14,7 +282,7 @@
 <nav>
 <ul>
 <li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
+<li><a href="about.html" class="active">About</a></li>
 <li><a href="services.html">Services</a></li>
 <li><a href="gallery.html">Gallery</a></li>
 <li><a href="contact.html">Contact</a></li>
@@ -23,23 +291,194 @@
 
 </header>
 
-<div class="container">
+<section class="hero-about">
 
-<h1>About Us</h1>
+<div class="hero-content">
 
-<br>
+<h1>Beauty Begins With Confidence</h1>
 
 <p>
-Joy Beauty Salon provides professional beauty services including
-hair styling, nail care, makeup, facial treatments and massage.
-Our goal is to help every client look and feel beautiful.
+At Joy Beauty Salon, we believe beauty is more than appearance. Our talented beauty professionals are passionate about helping you look and feel your absolute best.
+</p>
+
+<a href="contact.html" class="btn">Book an Appointment</a>
+
+</div>
+
+</section>
+
+<section class="about-section">
+
+<div class="container">
+
+<h2>Who We Are</h2>
+
+<p>
+Joy Beauty Salon is your trusted destination for premium beauty and wellness services. Whether you need a stunning hairstyle, flawless makeup, relaxing facial, manicure, pedicure, or massage, our experienced team delivers exceptional service in a welcoming environment.
 </p>
 
 </div>
 
+</section>
+
+<section class="story">
+
+<div class="container">
+
+<h2>Our Story</h2>
+
+<p>
+Since our establishment, Joy Beauty Salon has been committed to enhancing natural beauty through quality services, professional care, and modern beauty techniques. Our mission has always been to leave every client feeling confident, refreshed, and beautiful after every visit.
+</p>
+
+</div>
+
+</section>
+
+<section class="mission-vision">
+
+<div class="container">
+
+<div class="box">
+<h2>Our Mission</h2>
+
+<p>
+To provide high-quality beauty services with professionalism, creativity, and excellent customer care while ensuring every client enjoys a relaxing and satisfying experience.
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Our Vision</h2>
+
+<p>
+To become the leading beauty salon recognized for innovation, quality services, and customer satisfaction throughout the region.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="why-us">
+
+<div class="container">
+
+<h2>Why Choose Us?</h2>
+
+<div class="features">
+
+<div class="feature">
+
+<h3>Professional Stylists</h3>
+
+<p>Experienced beauty experts trained in modern beauty trends.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Premium Products</h3>
+
+<p>We use trusted brands to ensure excellent beauty results.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Relaxing Atmosphere</h3>
+
+<p>A clean, calm, and luxurious environment for every client.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Affordable Prices</h3>
+
+<p>Quality beauty services at fair and competitive prices.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="container">
+
+<h2>Our Achievements</h2>
+
+<div class="stats-container">
+
+<div class="stat">
+<h3>8+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h3>2500+</h3>
+<p>Happy Clients</p>
+</div>
+
+<div class="stat">
+<h3>12</h3>
+<p>Beauty Experts</p>
+</div>
+
+<div class="stat">
+<h3>20+</h3>
+<p>Beauty Services</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="team">
+
+<div class="container">
+
+<h2>Meet Our Team</h2>
+
+<p>
+Our dedicated team of hairstylists, makeup artists, skincare professionals, and nail technicians work together to ensure every client receives personalized care and outstanding beauty services.
+</p>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Ready For Your Beauty Transformation?</h2>
+
+<p>
+Visit Joy Beauty Salon today and let us help you reveal your natural beauty with our premium salon services.
+</p>
+
+<a href="contact.html" class="btn">Book Now</a>
+
+</div>
+
+</section>
+
 <footer>
 
-<p>© 2026 Joy Beauty Salon</p>
+<p><strong>Joy Beauty Salon</strong></p>
+
+<p>Your trusted destination for beauty, elegance, and self-care.</p>
+
+<p>&copy; 2026 Joy Beauty Salon. All Rights Reserved.</p>
 
 </footer>
 
